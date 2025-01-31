@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>Image: <img src="{{ url_for('static', filename='uploads/' + filename) }}" width="300"></p>
+    <p>The image is: {{ result }}</p>
+    <a href="/">Go Back</a>
+</body>
+</html>
