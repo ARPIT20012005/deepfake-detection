@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepfake Detection</title>
+    <link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>Welcome to Deepfake Detection</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <label for="file">Upload an image:</label>
-        <input type="file" name="file" id="file" required>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1><i class="fas fa-shield-alt"></i> Deepfake Detection</h1>
+        <p>Upload an image or video to check for deepfakes.</p>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="upload-btn">
+                <label for="file">
+                    <i class="fas fa-image"></i> Upload Image
+                </label>
+                <input type="file" name="file" id="file" accept="image/*" required>
+            </div>
+
+            <div class="upload-btn">
+                <label for="video">
+                    <i class="fas fa-video"></i> Upload Video
+                </label>
+                <input type="file" name="video" id="video" accept="video/*">
+            </div>
+
+            <button type="submit"><i class="fas fa-upload"></i> Submit</button>
+        </form>
+    </div>
 </body>
+
 </html>

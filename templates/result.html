@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
+    <link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>Prediction Result</h1>
-    <p>Image: <img src="{{ url_for('static', filename='uploads/' + filename) }}" width="300"></p>
-    <p>The image is: {{ result }}</p>
-    <a href="/">Go Back</a>
+    <div class="container">
+        <h1><i class="fas fa-poll"></i> Prediction Result</h1>
+        <p>Here is the analysis of the uploaded file.</p>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+        </div>
+
+        <h2>The image is: <span class="result-text">{{ result }}</span></h2>
+
+        <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Go Back</a>
+    </div>
 </body>
+
 </html>
